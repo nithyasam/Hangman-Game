@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="assets/javascript/game.js"></script>
+</head>
+<body>
+	<h1>Hangman-- Universe</h1><br><br><br><br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4" id="image">
+			<img src="assets/images/imgbackground.jpg" width="300" height="300">
+			</div>
+			<div class="col-md-4" id="main">
+				<h3>Press any key to start the game...</h3>
+				Wins: <br><br>
+				Current Word : <br><br>
+				Number of guesses remaining : <br><br>
+				Letters already guessed :
+			</div>
+		</div>
+	</div>
+	<audio id="success">
+		<source src="assets/audio/success.wav" type="audio/wav">
+	</audio>
+	<audio id="failure">
+		<source src="assets/audio/failure.wav" type="audio/wav">
+	</audio>
+	</body>
+	</html>

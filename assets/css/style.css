@@ -1,0 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+	color:#777777;
+	line-height: 23px;
+	font-size: 18px;
+	background-image: url(../../assets/images/background.jpg);
+}
+
+h1{
+	background-color: #4aaaa5;
+	min-width: 250px;
+	height: auto;
+	padding: 20px;
+	color: white;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'Georgia', Times, 'Times New Roman', serif;
+}
+#image{
+	border: 2px solid #bbb;
+	width: auto;
+	height:auto;
+	background-color: #ffffff;
+	padding: 30px;
+}
+#main{
+	border: 2px solid #bbb;
+	width: auto;
+	height:auto;
+	background-color: #ffffff;
+	padding: 30px;
+}
