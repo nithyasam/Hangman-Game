@@ -3,7 +3,7 @@ var wins = 0;
 var guesses = 12;
 var result=[];
 var input="";
-var inputArr=[];
+var inputArr="";
 var proceed = false;
 var randomIndex;
 var systemChoice;
