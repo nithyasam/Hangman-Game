@@ -17,24 +17,28 @@ document.onkeyup = function(event) {
 	input = (event.key).toLowerCase();
 	proceed = checkLetter(event.keyCode);
 	if(proceed){
-		lettersGuessed+=input;
-		if(guesses>0){
-			findChar(input,word,result);
-			if(result.toString() === word.toString()){
-				wins++;
-				playMusic("success");
+		if(!alreadyGuessed(lettersGuessed, input)){
+			lettersGuessed+=input;
+			if(guesses>0){
+				findChar(input,word,result);
+				if(result.toString() === word.toString()){
+					wins++;
+					playMusic("success");
+					wordGen();
+					lettersGuessed="";
+					guesses = 12;
+				}
+			}
+			else{
+				alert("chance over");
+				playMusic("failure");
 				wordGen();
 				lettersGuessed="";
 				guesses = 12;
 			}
 		}
-		else{
-			alert("chance over");
-			playMusic("failure");
-			wordGen();
-			lettersGuessed="";
-			guesses = 12;
-		}
+		else
+			alert("Letter already guessed")
 	}
 	var html = "<p> Wins: " + wins +"</p>"+"<br>"+
 	"<p> Current Word : " + result.join("") + "</p>" + "<br>"+
@@ -42,7 +46,7 @@ document.onkeyup = function(event) {
 	"<p> Letters already guessed : "+ lettersGuessed +  "</p>";
 	/*--for the coressponding image display --*/
 	var imghtml = "<img src=\"assets/images/"+ systemChoice +".jpg\""+ 
-				   "width=\"300\" height=\"300\">";
+	"width=\"300\" height=\"300\">";
 	/*--injecting into the html elements--*/			   
 	document.querySelector("#main").innerHTML = html;
 	document.querySelector("#image").innerHTML = imghtml;
@@ -83,6 +87,16 @@ function checkLetter(keyCode)
 	}
 	return true;
 }  
+
+/*check if the letter is already guessed--*/
+function alreadyGuessed(str, c){
+	if(str.indexOf(c) > -1){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 
 /*--For game sounds--*/ 
 function playMusic(musicType){
